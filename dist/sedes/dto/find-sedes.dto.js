@@ -9,19 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateTicketDto = void 0;
+exports.FindSedeDTO = void 0;
 const class_validator_1 = require("class-validator");
-class CreateTicketDto {
+class FindSedeDTO {
 }
 __decorate([
-    (0, class_validator_1.IsNumber)(),
+    (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", Number)
-], CreateTicketDto.prototype, "sedeId", void 0);
+    __metadata("design:type", String)
+], FindSedeDTO.prototype, "sedeId", void 0);
 __decorate([
     (0, class_validator_1.IsNumber)(),
+    (0, class_validator_1.Min)(2),
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", Number)
-], CreateTicketDto.prototype, "tipoAtencion", void 0);
-exports.CreateTicketDto = CreateTicketDto;
-//# sourceMappingURL=create-ticket.dto.js.map
+], FindSedeDTO.prototype, "aforo", void 0);
+exports.FindSedeDTO = FindSedeDTO;
+//# sourceMappingURL=find-sedes.dto.js.map

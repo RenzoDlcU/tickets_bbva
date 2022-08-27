@@ -12,36 +12,28 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TicketsController = void 0;
+exports.SedesController = void 0;
 const common_1 = require("@nestjs/common");
-const tickets_service_1 = require("./tickets.service");
-let TicketsController = class TicketsController {
-    constructor(ticketsService) {
-        this.ticketsService = ticketsService;
+const sedes_service_1 = require("./sedes.service");
+const find_sedes_dto_1 = require("./dto/find-sedes.dto");
+let SedesController = class SedesController {
+    constructor(sedesService) {
+        this.sedesService = sedesService;
     }
-    findAll() {
-        return this.ticketsService.findAll();
-    }
-    findOne(id) {
-        return this.ticketsService.findOne(id);
+    findOne(body) {
+        return this.sedesService.findOne(body);
     }
 };
 __decorate([
-    (0, common_1.Get)(),
+    (0, common_1.Get)('tickets'),
+    __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [find_sedes_dto_1.FindSedeDTO]),
     __metadata("design:returntype", void 0)
-], TicketsController.prototype, "findAll", null);
-__decorate([
-    (0, common_1.Get)(':id'),
-    __param(0, (0, common_1.Param)('id')),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", void 0)
-], TicketsController.prototype, "findOne", null);
-TicketsController = __decorate([
-    (0, common_1.Controller)('tickets'),
-    __metadata("design:paramtypes", [tickets_service_1.TicketsService])
-], TicketsController);
-exports.TicketsController = TicketsController;
-//# sourceMappingURL=tickets.controller.js.map
+], SedesController.prototype, "findOne", null);
+SedesController = __decorate([
+    (0, common_1.Controller)('api/v1/sedes'),
+    __metadata("design:paramtypes", [sedes_service_1.SedesService])
+], SedesController);
+exports.SedesController = SedesController;
+//# sourceMappingURL=sedes.controller.js.map

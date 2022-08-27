@@ -2,6 +2,6 @@ export interface Ticket {
     id:    string;
     codigo: string;
     hora: Date;
-    sedeId: number;
+    sedeId: string;
     tipoAtencionId: number;
 }
