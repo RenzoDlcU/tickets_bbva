@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Post, Body} from '@nestjs/common';
 import { SedesService } from './sedes.service';
 import { FindSedeDTO } from './dto/find-sedes.dto';
 
@@ -6,7 +6,7 @@ import { FindSedeDTO } from './dto/find-sedes.dto';
 export class SedesController {
   constructor(private readonly sedesService: SedesService) {}
 
-  @Get('tickets')
+  @Post('tickets')
   findOne(@Body() body: FindSedeDTO) {
     return this.sedesService.findOne(body);
   }

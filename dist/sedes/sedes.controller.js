@@ -25,7 +25,7 @@ let SedesController = class SedesController {
     }
 };
 __decorate([
-    (0, common_1.Get)('tickets'),
+    (0, common_1.Post)('tickets'),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [find_sedes_dto_1.FindSedeDTO]),
